@@ -78,9 +78,6 @@
 // export const Master = mongoose.model('Master', masterSchema);
 
 
-
-
-
 import mongoose from 'mongoose';
 
 const masterSchema = new mongoose.Schema({
@@ -106,10 +103,10 @@ const masterSchema = new mongoose.Schema({
     ],
     default: 'other'
   },
-  frequency: { // ✅ Frequency field add kiya
+  frequency: { 
     type: String,
-    enum: ['OD', 'BD', 'TDS', 'QID', 'SOS', 'HS', 'AC', 'PC', 'STAT', 'EOD', 'Weekly', 'Monthly'],
-    default: ''
+    enum: ['OD', 'BD', 'TDS', 'QID', 'SOS', 'HS', 'AC', 'PC', 'STAT', 'EOD', 'Weekly', 'Monthly', ''], // ✅ Sirf ye change kiya
+    default: '' // ✅ Default empty string rakho
   },
   doctorId: { type: mongoose.Schema.Types.ObjectId, ref: 'Doctor', required: true }
 }, { timestamps: true });

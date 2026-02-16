@@ -284,7 +284,7 @@ import { appointmentService } from '../../appointment/services/appointment.servi
 export class PatientService {
   async registerPatient(data: any, doctorId: string) {
     const count = await patientRepository.countByDoctor(doctorId);
-    const uhid = generateUHID(doctorId, count + 1);
+    const uhid = generateUHID();
     
     const patientData = {
       ...data,
